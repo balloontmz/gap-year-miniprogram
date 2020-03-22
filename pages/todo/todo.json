@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "header-tab-bar": "/components/headertabbar/headertabbar",
+    "nav-bar": "/components/navbar/navbar"
+  },
+  "navigationStyle": "custom"
+}

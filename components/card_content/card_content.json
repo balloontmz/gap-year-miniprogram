@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "card-content-bar": "/components/card_content_bar/card_content_bar",
+    "card-content-item": "/components/card_content_item/card_content_item"
+  }
+}

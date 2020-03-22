@@ -1,0 +1,38 @@
+/* pages/todo/todo.wxss */
+.index-container {
+    /* padding: 20rpx; */
+    display:flex;
+    flex-direction: column;
+    /* background-color: #C14242; */
+}
+
+.list-view {
+    height: 100vh;
+    width: 100%;
+}
+
+/* 文本区域 */
+.text-container {
+    padding-top: 20vh;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.text-area {
+    width: 80%;
+    height: 20vh;
+    margin-left: 10vw;
+    background-color: wheat;
+}
+
+.text-title {
+    font-size: 60rpx;
+    text-align: center;
+}
+/* ///////////// */
+
+.task-list-container {
+    background-color: green;
+    /* 剩余的视口高度 */
+    height: 60vh; 
+}

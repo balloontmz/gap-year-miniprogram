@@ -1,0 +1,34 @@
+<!-- index.wxml -->
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
+<!-- 顶部状态栏 -->
+<nav-bar></nav-bar>
+<view class="flex-column index-container">
+  <!-- 轮播图组件 -->
+  <carousel></carousel>
+  <!-- 下方快速了解主容器 -->
+  <view class="content-container">
+    <!-- 轮播图下方对接的沉浸的 bar -->
+    <!-- <view class="content-bar">
+      <view class="content-bar-item-left">快速了解</view>
+      <view class="content-bar-item-right">查看全部></view>
+    </view> -->
+    <card-content-bar></card-content-bar>
+    <!-- bar 下方的散列图标区域 -->
+    <view class="tag-area">
+      <view wx:for="{{quickTags}}">
+        <view class="tag-item">{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 其余区域主容器 -->
+  <view class="main-content-contaniner">
+    <card-content barTitle="行程路线"></card-content>
+    <card-content barTitle="玩法推荐"></card-content>
+    <view class="sub-card-layout">这是一个子内容块</view>
+    <!-- 公告条 -->
+    <scroll-bar></scroll-bar>
+    <view class="sub-card-layout">
+      <water-fall></water-fall>
+    </view>
+  </view>
+</view>

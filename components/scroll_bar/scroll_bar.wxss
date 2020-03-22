@@ -1,0 +1,15 @@
+/* components/scroll_bar/scroll_bar.wxss */
+.swiper_container {
+  height: 55rpx;
+  width: 100vw;
+  background-color: white;
+  margin-top: 20rpx;
+}
+ 
+.swiper_item {
+  font-size: 25rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 2px;
+}

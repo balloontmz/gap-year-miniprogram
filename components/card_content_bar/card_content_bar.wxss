@@ -1,0 +1,23 @@
+/* components/card_content_bar/card_content_bar.wxss */
+.content-bar {
+    display: flex;
+    /* background-color: green; */
+  }
+  
+  .content-bar-item-left {
+    padding-top: 30rpx;
+    padding-left: 20rpx;
+    width: 50vw;
+    text-align: left;
+    font-size: 40rpx;
+    color: black;
+  }
+  
+  .content-bar-item-right {
+    padding-top: 30rpx;
+    padding-right: 20rpx;
+    width: 50vw;
+    text-align: right;
+    font-size: 30rpx;
+    color: #c8c8c8;
+  }

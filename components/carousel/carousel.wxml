@@ -1,0 +1,34 @@
+<!-- components/carousel/carousel.wxml -->
+<!-- 这是个轮播图组件 -->
+<!-- [自定义指示点](https://www.jianshu.com/p/adb81688ebe8) -->
+<swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="5000" duration="1000" bind:change="bindchange">
+  <block wx:for="{{movies}}" wx:for-index="index" wx:key="url">
+    <swiper-item>
+      <!-- 模糊背景 不在文档流内 -->
+      <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+      <!-- //////////////////////////////////////////////// -->
+      <!-- 文档流内 -->
+      <!-- 图片居中,采用容器包裹 -->
+      <view class="center-image">
+        <view class="center-item">
+          <view class="center-image-container">
+            <image src="{{item.url}}" mode="aspectFill" />
+          </view>
+          <view class="center-item-title">这是个标题啊</view>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- <view>
+  <switch checked="{{indicatorDots}}" bindchange="changeIndicatorDots" />
+</view> -->
+<view class="dots">
+  <block wx:for="{{movies}}" wx:key="index">
+    <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+  </block>
+</view>
+<!-- //////////////////////////////////////////////// -->
+<!-- 不在文档流内的固定文字 -->
+<!-- 顶部占位空 view -->
+<header-tab-bar></header-tab-bar>

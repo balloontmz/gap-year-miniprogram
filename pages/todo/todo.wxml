@@ -1,0 +1,23 @@
+<!-- pages/todo/todo.wxml -->
+<!-- <wxs module="filters" src="../../utils/filter.wxs"></wxs> -->
+<!-- 顶部状态栏 -->
+<nav-bar title="备忘录" title-color="black"></nav-bar>
+<view class="flex-column todo-container" style="background-color:#C14242;">
+    <header-tab-bar active="1" activeColor="black"></header-tab-bar>
+    <view class="list-view">
+        <!-- 文本区域 -->
+        <view class="text-container">
+            <view class="text-area">
+                <view class="text-title">你好呀</view>
+                <view class="text-detail">
+                    <view>下面是你的任务清单,</view>
+                    <view>今天你有四份任务尚未完成.</view>
+                </view>
+            </view>
+        </view>
+        <view class="task-list-container">
+            <!-- 此处采用自定义轮播图 -->
+            <!-- https://www.cnblogs.com/yxxrui/p/wechatDiySlider.html -->
+        </view>
+    </view>
+</view>

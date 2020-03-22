@@ -1,0 +1,6 @@
+<!-- components/card_content_item/card_content_item.wxml -->
+<view class="card-content-item">
+    <image src="{{itemUrl}}" style="width:40vw;height:20vw;border-radius:10rpx" />
+    <!-- TODO: 此处前置可添加一个图标 -->
+    <view style="">这是一个测试</view>
+</view>

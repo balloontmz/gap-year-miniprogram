@@ -1,0 +1,14 @@
+<!-- components/card_content/card_content.wxml -->
+<view class="card-content">
+    <card-content-bar title="{{barTitle}}"></card-content-bar>
+    <view class="page-section-spacing">
+        <!-- 水平滚动 -->
+        <scroll-view scroll-x="true" class="card-scroll-view">
+            <!-- display: inline-block -->
+            <view wx:for="{{items}}" wx:key="url" class="card-scroll-item">
+                <card-content-item item-url="{{item.url}}"></card-content-item>
+                <!-- <image src="{{item.url}}" /> -->
+            </view>
+        </scroll-view>
+    </view>
+</view>

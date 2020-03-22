@@ -1,0 +1,68 @@
+/**index.wxss**/
+.index-container {
+  /* padding: 20rpx; */
+  display:flex;
+  flex-direction: column;
+  background-color: #EEEEEE;
+}
+
+/* 沉入轮播图区域样式 */
+.content-container {
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  background-color: white;
+  /* margin-top: -30rpx; */
+  margin-top: -5vw;
+  /* padding-top: 30rpx; */
+  /* height: 200rpx; */
+  z-index: 1;
+}
+
+.content-bar {
+  display: flex;
+  /* background-color: green; */
+}
+
+.content-bar-item-left {
+  padding-top: 30rpx;
+  padding-left: 20rpx;
+  width: 50vw;
+  text-align: left;
+  font-size: 40rpx;
+  color: black;
+}
+
+.content-bar-item-right {
+  padding-top: 30rpx;
+  padding-right: 20rpx;
+  width: 50vw;
+  text-align: right;
+  font-size: 30rpx;
+  color: #c8c8c8;
+}
+
+/* 快速了解标签区域 */
+.tag-area {
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  margin: 10rpx 20rpx;
+  /* justify-content:space-around; */
+  /* background-color: white; */
+}
+
+.tag-item {
+  color: black;
+  /* min-width: 30vw; */
+  padding: 10rpx;
+  margin: 10rpx;
+  border-radius: 5rpx;
+  background-color: #EEEEEE;
+  color: #8f8f8f;
+}
+
+/* 主页子卡片 */
+.sub-card-layout {
+  margin-top: 20rpx;
+  background-color: white;
+}

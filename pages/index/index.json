@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "carousel": "/components/carousel/carousel",
+    "carousel2": "/components/carousel2/carousel2",
+    "scroll-bar": "/components/scroll_bar/scroll_bar",
+    "nav-bar": "/components/navbar/navbar",
+    "card-content-bar": "/components/card_content_bar/card_content_bar",
+    "card-content": "/components/card_content/card_content",
+    "water-fall": "/components/water_fall/water_fall"
+  },
+  "navigationStyle": "custom"
+}

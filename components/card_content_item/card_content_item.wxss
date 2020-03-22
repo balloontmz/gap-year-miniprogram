@@ -1,0 +1,7 @@
+/* components/card_content_item/card_content_item.wxss */
+.card-content-item {
+    padding: 0rpx;
+    width:40vw;
+    height:30vw;
+    background-color:white;
+}

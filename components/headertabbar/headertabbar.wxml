@@ -1,0 +1,13 @@
+<!-- components/headertabbar/headertabbar.wxml -->
+<view class="head-row">
+    <view class="empty-view" style="height:{{headHeight}}px"></view>
+    <!-- 顶部 tab 栏 -->
+    <view class="tab-row">
+        <view class="tab-row-item {{active==1 ? 'active' : ''}}" style="color: {{active==1 ? activeColor : normalColor}}">
+            每日清单
+        </view>
+        <view class="tab-row-item {{active==2 ? 'active' : ''}}" style="color: {{active==2 ? activeColor : normalColor}}">
+            故事分享
+        </view>
+    </view>
+</view>

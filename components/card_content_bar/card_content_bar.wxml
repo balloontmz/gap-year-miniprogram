@@ -1,0 +1,5 @@
+<!-- components/card_content_bar/card_content_bar.wxml -->
+<view class="content-bar">
+    <view class="content-bar-item-left">{{title}}</view>
+    <view class="content-bar-item-right">查看全部></view>
+</view>

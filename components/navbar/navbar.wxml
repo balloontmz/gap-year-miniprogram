@@ -1,0 +1,14 @@
+<!-- components/navbar/navbar.wxml -->
+<!-- 自定义导航栏 https://juejin.im/post/5cf52b8251882556174dd795 -->
+<view class='topbar'>
+    <view class='status' style="height:{{statusHeight}}px"></view>
+    <view class='navbar' style="height:{{navHeight}}px">
+        <view class='navbar_back' bindtap='backClick'>
+            <!-- <image src='../images/black_back.png'></image> -->
+            <view>-></view>
+        </view>
+        <view class='navbar_title' style="height:{{navHeight}}px">
+            <view style="color: {{titleColor}};">{{title}}</view>
+        </view>
+    </view>
+</view>

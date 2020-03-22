@@ -1,0 +1,113 @@
+var filter = {
+  // 格式化价格显示（原始价格以分为单位）
+  formatPrice: function (value) {
+    if (!value && value !== 0) return value
+    return Number(value / 100).toFixed(2)
+  },
+  // 计算增值服务总金额
+  totalPrice: function (arr) {
+    if (!arr || !arr.length) return 0
+    var total = arr.reduce(function (cacl, cur) {
+      return cacl + cur.price
+    }, 0)
+    return total
+  },
+  // 格式化物品属性显示
+  formatProp: function (arr) {
+    if (!arr) return
+    var nameList = arr.map(function (item) {
+      return item.prop_name
+    })
+    return nameList.join(' ')
+  },
+  // 格式化重量显示（将以克为单位的重量转换成为千克为单位）
+  formatWeight: function (value) {
+    if (!value) return value
+    var len = value < 10 ? 3 : 2
+    return Number(value / 1000).toFixed(len)
+  },
+  // 格式化长、宽、高、显示转成 CM
+  formatCM: function (value) {
+    if (!value) return value
+    return value / 100
+  },
+  // 获取体积（长 * 宽 * 高 / factor)
+  getVolume: function (length, width, height, factor) {
+    if (!length || !width || !height) return 0
+    var newLenght = length / 100
+    var newWidth = width / 100
+    var newHeight = height / 100
+    return Number(newLenght * newWidth * newHeight / factor).toFixed(2)
+  },
+  // 获取日期 传递过来的形如 2019-11-05 00：00：00 形如，返回 2019-11-05
+  getDateFromDateTime: function (dateTime) {
+    if (!dateTime) return ''
+    return dateTime.split(' ')[0]
+  },
+  // 获取时间 传递过来的形如 2019-11-05 14:21:30 返回 14：21：30
+  getTimeFromDateTime: function (dateTime) {
+    if (!dateTime) return ''
+    return dateTime.split(' ')[1]
+  },
+  // 缩略订单号
+  acronym: function (orderSN) {
+    if (!orderSN) return ''
+    var pre = orderSN.slice(0, 3)
+    var next = orderSN.slice(-2)
+    return pre + '***' + next
+  },
+  getRows: function (arr, len = 4) {
+    if (!arr || !arr.length) return 0
+    var length = Math.ceil(arr.length / len)
+    var array = []
+    for (var i=1; i<=length; i++) {
+      array.push(i)
+    }
+    return array
+  },
+  // 分割数组
+  arrSlice: function (arr, start, len = 4) {
+    if (!arr || !arr.length) return []
+    return arr.slice(start * len, start * len + len)
+  },
+  include: function (arr, value) {
+    var isBack = false
+    if (arr) {
+      arr.some(function (ele) {
+        if (ele === value) {
+          isBack = true
+          return true
+        }
+      })
+    }
+    return isBack
+  },
+  orderSatus: function (status) {
+    if (!status) return ''
+    var name = ''
+    switch (status) {
+      case 1:
+        name = '待处理'
+        break
+      case 2:
+      case 12:
+        name = '待支付'
+        break
+      case 3:
+        name = '待发货'
+        break
+      case 4:
+        name = '已发货'
+        break
+      case 5:
+        name = '已完成'
+        break
+      case 11:
+        name = '待审核'
+        break
+    }
+    return name
+  }
+}
+
+module.exports = filter

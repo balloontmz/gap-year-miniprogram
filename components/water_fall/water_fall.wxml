@@ -1,0 +1,6 @@
+<!-- components/water_fall/water_fall.wxml -->
+<view class="fall">
+    <view wx:for="{{list}}" wx:for-index="idx" wx:for-item="column" class="fall-column">
+        <view class="fall-column-item" wx:for="{{column}}" wx:for-index="i" wx:for-item="item" style="height: {{item.showHeight}}rpx"></view>
+    </view>
+</view>
