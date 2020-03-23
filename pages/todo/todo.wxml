@@ -2,7 +2,7 @@
 <!-- <wxs module="filters" src="../../utils/filter.wxs"></wxs> -->
 <!-- 顶部状态栏 -->
 <nav-bar title="备忘录" title-color="black"></nav-bar>
-<view class="flex-column todo-container" style="background-color:#C14242;">
+<view class="flex-column todo-container" style="background-color:#F7CAC7;">
     <header-tab-bar active="1" activeColor="black"></header-tab-bar>
     <view class="list-view">
         <!-- 文本区域 -->
@@ -17,7 +17,9 @@
         </view>
         <view class="task-list-container">
             <!-- 此处采用自定义轮播图 -->
-            <!-- https://www.cnblogs.com/yxxrui/p/wechatDiySlider.html -->
+            <!-- [轮播图无缝滚动](https://www.cnblogs.com/yxxrui/p/wechatDiySlider.html) -->
+            <!-- [卡片式轮播图](https://zhuanlan.zhihu.com/p/39744795) -->
+            <!-- [旋转木马,缩放轮播图效果](https://juejin.im/post/5b5a86125188251aa91dbecf) -->
         </view>
     </view>
 </view>
