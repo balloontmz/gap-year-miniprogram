@@ -1,6 +1,18 @@
 <!-- pages/task_list/task_list.wxml -->
-<view class="task-list-container" hover-class="none" hover-stop-propagation="false">
+<view class="task-list-page" hover-class="none" hover-stop-propagation="false">
     <view>
         <search-box id="SearchBar" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear"></search-box>
+    </view>
+    <view class="task-list-container" hover-class="none" hover-stop-propagation="false">
+        <view wx:for="{{listData}}" class="">
+            <view class="{{ item.showMore ? 'task-item-more' : 'task-item' }}" hover-class="none" hover-stop-propagation="false" bind:tap="tapTaskItem" data-item-id="{{item.id}}">
+                <view class="task-base-card" hover-class="none" hover-stop-propagation="false">
+                    {{item.name}}: {{item.detail}}
+                </view>
+                <view class="task-more-card" hover-class="none" hover-stop-propagation="false" wx:if="{{item.showMore}}">
+                    这里展示更多
+                </view>
+            </view>
+        </view>
     </view>
 </view>

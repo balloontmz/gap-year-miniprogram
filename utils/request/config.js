@@ -1,6 +1,7 @@
 // const baseUrl = 'https://dev-jiyun-api-v2.nle-tech.com/api/client/' // 开发服
 // const baseUrl = 'https://jiyun-test-api-v2.nle-tech.com/api/client/'  // 测试服
-const baseUrl = 'https://api-jiyun-v2.haiouoms.com/api/client/'  // 正式服'
+// const baseUrl = 'https://api-jiyun-v2.haiouoms.com/api/client/'  // 正式服'
+const baseUrl = 'http://127.0.0.1:8080/'  // 正式服'
 
 let lastCode = ''
 // 无需登录接口白名单

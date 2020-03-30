@@ -1,6 +1,43 @@
 /* pages/task_list/task_list.wxss */
 
-.task-list-container {
+.task-list-page {
     background-color: #F7CAC7;
-    height: 50vh;
+}
+
+.task-list-container {
+    padding-bottom: 30rpx;
+    /* height: 50vh; */
+}
+
+/* 单个任务 */
+.task-item {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10rpx;
+
+    background-color: red;
+    border-bottom: 5rpx solid #DBDBDB;
+    margin: 30rpx;
+}
+
+/* 单个任务--更多 */
+.task-item-more {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10rpx;
+
+    background-color: red;
+    border-bottom: 5rpx solid #DBDBDB;
+    margin: 30rpx;
+}
+
+.task-base-card {
+    height: 100rpx;
+}
+
+.task-more-card {
+    background-color: green;
+    height: 50rpx;
+    border-bottom-left-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
 }

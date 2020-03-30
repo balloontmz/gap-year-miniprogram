@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/task_list/task_list",
     "pages/todo/todo",
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/task_list/task_list"
+    "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
