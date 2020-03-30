@@ -1,0 +1,6 @@
+<!-- pages/task_list/task_list.wxml -->
+<view class="task-list-container" hover-class="none" hover-stop-propagation="false">
+    <view>
+        <search-box id="SearchBar" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear"></search-box>
+    </view>
+</view>

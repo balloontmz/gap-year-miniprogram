@@ -36,3 +36,8 @@
     /* 剩余的视口高度 */
     height: 60vh; 
 }
+
+/* 底部按钮 */
+.bottom-button {
+    height: 20%;
+}

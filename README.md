@@ -8,3 +8,6 @@
 1,直接修改原数据
 2.get 方法
 3.wxs
+
+## 
+[小程序采用外部图标,暂时失败...原因未知](https://blog.csdn.net/m0_38082783/article/details/78873053)

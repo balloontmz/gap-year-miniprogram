@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "header-tab-bar": "/components/headertabbar/headertabbar",
-    "nav-bar": "/components/navbar/navbar"
+    "nav-bar": "/components/navbar/navbar",
+    "card-carousel": "/components/card_carousel/card_carousel"
   },
   "navigationStyle": "custom"
 }

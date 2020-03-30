@@ -3,10 +3,10 @@
     <view class="empty-view" style="height:{{headHeight}}px"></view>
     <!-- 顶部 tab 栏 -->
     <view class="tab-row">
-        <view class="tab-row-item {{active==1 ? 'active' : ''}}" style="color: {{active==1 ? activeColor : normalColor}}">
+        <view class="tab-row-item {{active==1 ? 'active' : ''}}" style="color: {{active==1 ? activeColor : normalColor}}" catchtap="onTapNavigateTo" data-id="1">
             每日清单
         </view>
-        <view class="tab-row-item {{active==2 ? 'active' : ''}}" style="color: {{active==2 ? activeColor : normalColor}}">
+        <view class="tab-row-item {{active==2 ? 'active' : ''}}" style="color: {{active==2 ? activeColor : normalColor}}" catchtap="onTapNavigateTo" data-id="2">
             故事分享
         </view>
     </view>

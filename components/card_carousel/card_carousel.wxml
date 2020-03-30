@@ -1,0 +1,27 @@
+<!-- components/card_carousel/card_carousel.wxml -->
+<view class='card-list-wrapper'>
+    <view x-scroll='false' class="card-list" style='transform: translateX( {{cardDistance}}rpx)' bindtouchstart="onTouchStart" bindtouchend="onTouchEnd">
+        <!-- 循环 -->
+        <view class="nav-item {{classArray[index] ? classArray[index] : ''}}" wx:for="{{cardData}}" data-index="{{index}}">
+            <!-- 图片 -->
+            <!-- <image class='movie-image' src='{{item.image}}' mode='aspectFill'></image> -->
+            <view class="card-bar">
+                <view class="card-bar-left">
+                    <!-- <view class="iconfont iconhome"></view> -->
+                    <text>此处图标</text>
+                </view>
+                <view class="card-bar-right">
+                    <view>此处按钮</view>
+                </view>
+            </view>
+            <view class='card-info'>
+                <view class='card-title {{item.title.length>9 ? "text-small" : ""}}'>
+                    {{item.title}}
+                </view>
+                <view class='card-type'>{{item.category}}</view>
+            </view>
+            <!-- 导航至其他页面 -->
+            <view class='card-detail' catchtap='onTapNavigateTo' data-id='{{item.id}}'>电影详情</view>
+        </view>
+    </view>
+</view>

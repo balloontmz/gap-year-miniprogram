@@ -2,7 +2,8 @@
   "pages": [
     "pages/todo/todo",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/task_list/task_list"
   ],
   "window": {
     "backgroundTextStyle": "light",

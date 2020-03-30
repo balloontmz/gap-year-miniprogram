@@ -1,0 +1,6 @@
+/* pages/task_list/task_list.wxss */
+
+.task-list-container {
+    background-color: #F7CAC7;
+    height: 50vh;
+}
