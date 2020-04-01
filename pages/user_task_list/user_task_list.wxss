@@ -1,5 +1,4 @@
-/* pages/task_list/task_list.wxss */
-/* [子元素选择器](https://www.w3school.com.cn/css/css_selector_child.asp) */
+/* pages/user_task_list/user_task_list.wxss */
 
 .task-list-page {
     background-color: #F7CAC7;
@@ -131,6 +130,12 @@
 
 .input_base {  
     border: 2rpx solid #ccc;  
+    padding-left: 10rpx;  
+    margin-right: 50rpx;
+    width: 50vw;
+}
+
+.radio-wrapper {
     padding-left: 10rpx;  
     margin-right: 50rpx;
     width: 50vw;

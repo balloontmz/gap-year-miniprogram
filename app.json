@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/task_list/task_list",
+    "pages/user_task_list/user_task_list",
     "pages/todo/todo",
     "pages/index/index",
+    "pages/task_list/task_list",
     "pages/logs/logs"
   ],
   "window": {

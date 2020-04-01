@@ -18,4 +18,7 @@ const request = require('./config.js')
  */
 // exports.getPackages = (params) => request._get('package', params, { loading: false })
 
-exports.taskList = (params) => request._get('task', params, {loading: false})
+exports.taskList = (params) => request._get('task', params, { loading: false })
+
+exports.userTaskList = (params) => request._get('user-task', params)
+exports.createUserTask = (params) => request._post('user-task', params)

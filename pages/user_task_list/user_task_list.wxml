@@ -1,6 +1,4 @@
-<!-- pages/task_list/task_list.wxml -->
-<!-- [flex 控制子元素在主轴上的比例](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Controlling_Ratios_of_Flex_Items_Along_the_Main_Ax) -->
-<!-- [微信官方开发的组件库](https://developers.weixin.qq.com/miniprogram/dev/extended/weui/dialog.html) -->
+<!-- pages/user_task_list/user_task_list.wxml -->
 <view class="task-list-page" hover-class="none" hover-stop-propagation="false">
     <view>
         <search-box id="SearchBar" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear"></search-box>
@@ -37,11 +35,12 @@
                     {{item.name}}: {{item.detail}}
                 </view>
                 <view class="task-more-card" hover-class="none" hover-stop-propagation="false" wx:if="{{item.showMore}}">
-                    <view class="left-button btn" hover-class="none" hover-stop-propagation="false" catch:tap="onLeftBtnTap" data-item="{{item}}">
-                        加入我的清单
+                    <view class="left-button btn" hover-class="none" hover-stop-propagation="false" data-item="{{item}}">
+                        <!-- 历史记录 -- 进入新页面 -->
+                        历史记录
                     </view>
-                    <view class="right-button btn" hover-class="none" hover-stop-propagation="false">
-                        评论区
+                    <view class="right-button btn" hover-class="none" hover-stop-propagation="false" catch:tap="onRightBtnTap">
+                        完成/更新
                     </view>
                 </view>
             </view>
@@ -58,7 +57,17 @@
         <input class="input_base input_h30 col-0" name="name" value="{{activeTask.name}}"></input>
     </view>
     <view class="top grid">
-        <label class="title col-0">细节</label>
+        <label class="title col-0">名字</label>
+        <!-- [单选框文档](https://developers.weixin.qq.com/miniprogram/dev/component/radio.html) -->
+        <view class="radio-wrapper" hover-class="none" hover-stop-propagation="false">
+            <radio class="" wx:for-items="{{radioItems}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+                <text>{{item.value}}</text>
+            </radio>
+        </view>
+    </view>
+    <view class="top grid">
+        <!-- 每天每个任务能被更新多次 -->
+        <label class="title col-0">更新</label>
         <textarea class="input_base input_h100 col-0" name="detail" value="{{activeTask.detail}}"></textarea>
     </view>
 </mp-dialog>

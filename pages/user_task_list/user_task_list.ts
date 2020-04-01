@@ -1,7 +1,5 @@
-// task_list.ts
-// 获取应用实例
-//[事件传参](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html)
-const api = require('../../utils/request/api')
+// pages/user_task_list/user_task_list.ts
+const apiUserTask = require('../../utils/request/api')
 
 interface TaskItem {
   id: number
@@ -10,8 +8,8 @@ interface TaskItem {
   showMore: boolean
 }
 
-const CONFIRM = 1
-const CANCEL = 2
+const CONFIRM_USER_TASK = 1
+const CANCEL_USR_TASK = 2
 
 Page({
   data: {
@@ -28,7 +26,11 @@ Page({
       detail: '',
       showMore: false
     },
-    buttons: [{ text: '取消', index: CANCEL }, { text: '确定', index: CONFIRM }],
+    buttons: [{ text: '取消', index: CANCEL_USR_TASK }, { text: '确定', index: CONFIRM_USER_TASK }],
+    radioItems: [
+      { name: 'USA', value: '美国' },
+      { name: 'CHN', value: '中国', checked: 'true' },
+    ],
   },
 
   onLoad() {
@@ -74,7 +76,7 @@ Page({
   },
 
   loadData() {
-    api.taskList().then((res: any) => {
+    apiUserTask.userTaskList().then((res: any) => {
       console.log(res)
       let list: Array<TaskItem> = new Array()
       for (let index = 0; index < res.data.length; index++) {
@@ -110,7 +112,7 @@ Page({
     })
   },
 
-  onLeftBtnTap(e: any) {
+  onRightBtnTap(e: any) {
     console.log('点击左边的按钮事件并且被 catch', e)
     this.setData({
       activeTask: e.currentTarget.dataset.item,
@@ -150,9 +152,9 @@ Page({
   tapDialogButton(e: any) {
     console.log('传入的事件为:', e)
     //如果点击的是确认按钮
-    if (e.detail.item.index == CONFIRM) {
+    if (e.detail.item.index == CONFIRM_USER_TASK) {
       console.log('当前页面数据为:', this.data.activeTask)
-      api.createUserTask({
+      apiUserTask.createUserTask({
         name: this.data.activeTask.name,
         detail: this.data.activeTask.detail,
         task_id: this.data.activeTask.id,
