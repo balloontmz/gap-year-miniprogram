@@ -1,7 +1,8 @@
 <!-- pages/user_task_list/user_task_list.wxml -->
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
 <view class="task-list-page" hover-class="none" hover-stop-propagation="false">
     <view>
-        <search-box id="SearchBar" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear"></search-box>
+        <!-- <search-box id="SearchBar" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear"></search-box> -->
     </view>
     <view class="task-list-container" hover-class="none" hover-stop-propagation="false">
         <view wx:for="{{listData}}" class="">
@@ -18,7 +19,7 @@
                     <view class="header-center-wrapper" hover-class="none" hover-stop-propagation="false">
                         <view class="header-center" hover-class="none" hover-stop-propagation="false">
                             <view class="header-title" hover-class="none" hover-stop-propagation="false">
-                                title
+                                {{item.name}}
                             </view>
                             <view class="header-time" hover-class="none" hover-stop-propagation="false">
                                 2020-03-30
@@ -32,14 +33,14 @@
                 </view>
                 <!-- -------- -->
                 <view class="task-base-card" hover-class="none" hover-stop-propagation="false">
-                    {{item.name}}: {{item.detail}}
+                    {{item.detail}}
                 </view>
                 <view class="task-more-card" hover-class="none" hover-stop-propagation="false" wx:if="{{item.showMore}}">
-                    <view class="left-button btn" hover-class="none" hover-stop-propagation="false" data-item="{{item}}">
+                    <view class="left-button btn" hover-class="none" hover-stop-propagation="false">
                         <!-- 历史记录 -- 进入新页面 -->
                         历史记录
                     </view>
-                    <view class="right-button btn" hover-class="none" hover-stop-propagation="false" catch:tap="onRightBtnTap">
+                    <view class="right-button btn" hover-class="none" hover-stop-propagation="false" catch:tap="onRightBtnTap" data-item="{{item}}">
                         完成/更新
                     </view>
                 </view>
@@ -51,23 +52,37 @@
     <input type='text' placeholder="名字" auto-focus />
     <input type='text' placeholder="细节" auto-focus />
 </modal> -->
-<mp-dialog title="test" show="{{!hiddenModalPut}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+<mp-dialog title="每日完成情况" show="{{!hiddenModalPut}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
     <view class="top grid">
-        <label class="title col-0">名字</label>
-        <input class="input_base input_h30 col-0" name="name" value="{{activeTask.name}}"></input>
-    </view>
-    <view class="top grid">
-        <label class="title col-0">名字</label>
+        <label class="title col-0">状态</label>
         <!-- [单选框文档](https://developers.weixin.qq.com/miniprogram/dev/component/radio.html) -->
         <view class="radio-wrapper" hover-class="none" hover-stop-propagation="false">
-            <radio class="" wx:for-items="{{radioItems}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+            <!-- <radio class="" wx:for-items="{{radioItems}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
                 <text>{{item.value}}</text>
-            </radio>
+            </radio> -->
+            <radio-group bindchange="radioChange">
+                <view class='label'>
+                    <label class="ui-radio {{item.checked==true?'active':''}}" wx:for="{{radioItems}}">
+                        <radio value="{{item.value}}" checked="{{item.checked}}" />
+                        <text class="text">{{item.name}}</text>
+                    </label>
+                </view>
+            </radio-group>
         </view>
     </view>
-    <view class="top grid">
+    <view class="top grid" style="background-color:grey;">
         <!-- 每天每个任务能被更新多次 -->
         <label class="title col-0">更新</label>
-        <textarea class="input_base input_h100 col-0" name="detail" value="{{activeTask.detail}}"></textarea>
+        <view class="" hover-class="none" hover-stop-propagation="false" style="background-color:green;width: 50vw;">
+            <view class="" hover-class="none" hover-stop-propagation="false" wx:for="{{existDetails}}" style="background-color:red;width: 50vw;display: -webkit-box; display: box; ">
+                <view class="" hover-class="none" hover-stop-propagation="false">
+                    {{ filters.formatTime(item.time) }}
+                </view>
+                <view class="" hover-class="none" hover-stop-propagation="false" style="padding-left:10rpx;">
+                    {{item.description == '' ? 'empty string' : item.description}}
+                </view>
+            </view>
+            <textarea class="input_base input_h100 col-0" name="detail" value="{{updateDetail}}" bindinput="textInput"></textarea>
+        </view>
     </view>
 </mp-dialog>

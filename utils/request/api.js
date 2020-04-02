@@ -22,3 +22,5 @@ exports.taskList = (params) => request._get('task', params, { loading: false })
 
 exports.userTaskList = (params) => request._get('user-task', params)
 exports.createUserTask = (params) => request._post('user-task', params)
+
+exports.updateProcess = (params) => request._post('user-task/update-process', params)

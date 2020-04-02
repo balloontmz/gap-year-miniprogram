@@ -60,7 +60,7 @@ var filter = {
     if (!arr || !arr.length) return 0
     var length = Math.ceil(arr.length / len)
     var array = []
-    for (var i=1; i<=length; i++) {
+    for (var i = 1; i <= length; i++) {
       array.push(i)
     }
     return array
@@ -107,6 +107,14 @@ var filter = {
         break
     }
     return name
+  },
+
+  formatTime: function (time) {
+    var date = getDate(time)
+    console.log('当前取得的时间为:', date)
+    // return date.toTimeString()
+    //格式化时间
+    return (date.getHours() > 9 ? date.getHours() : '0' + date.getHours()) + ":" + (date.getMinutes() > 9 ? date.getMinutes() : '0' + date.getMinutes())
   }
 }
 

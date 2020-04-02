@@ -1,11 +1,24 @@
 // pages/user_task_list/user_task_list.ts
 const apiUserTask = require('../../utils/request/api')
 
-interface TaskItem {
+interface UserTaskItem {
   id: number
   name: string
   detail: string
+  process: Process
   showMore: boolean
+}
+
+interface Process {
+  id: number
+  completed: boolean
+  detail: string
+  details: Array<Detail>
+}
+
+interface Detail {
+  description: string
+  time: string
 }
 
 const CONFIRM_USER_TASK = 1
@@ -16,20 +29,23 @@ Page({
     addflag: true,  //判断是否显示搜索框右侧部分
     addimg: '../../images/activity_add.png',
     searchstr: '',
-    listData: new Array<TaskItem>(),
+    listData: new Array<UserTaskItem>(),
 
     //可以通过hidden是否掩藏弹出框的属性，来指定那个弹出框
     hiddenModalPut: true,
-    activeTask: <TaskItem>{
+    activeTask: <UserTaskItem>{
       id: 0,
       name: '',
       detail: '',
+      process: {},
       showMore: false
     },
+    updateDetail: '',
+    existDetails: new Array<Detail>(),
     buttons: [{ text: '取消', index: CANCEL_USR_TASK }, { text: '确定', index: CONFIRM_USER_TASK }],
     radioItems: [
-      { name: 'USA', value: '美国' },
-      { name: 'CHN', value: '中国', checked: 'true' },
+      { name: '未完成', value: 'UNDONE' },
+      { name: '完成', value: 'COMPLETED', checked: true },
     ],
   },
 
@@ -78,13 +94,19 @@ Page({
   loadData() {
     apiUserTask.userTaskList().then((res: any) => {
       console.log(res)
-      let list: Array<TaskItem> = new Array()
+      let list: Array<UserTaskItem> = new Array()
       for (let index = 0; index < res.data.length; index++) {
         const element = res.data[index];
         list.push({
           id: element.id,
           name: element.name,
           detail: element.detail,
+          process: {
+            id: element.process.id,
+            detail: element.process.detail,
+            completed: false,
+            details: element.process.details ?? [],
+          },
           showMore: false
         })
 
@@ -113,23 +135,12 @@ Page({
   },
 
   onRightBtnTap(e: any) {
-    console.log('点击左边的按钮事件并且被 catch', e)
+    console.log('点击右边的按钮事件并且被 catch', e)
     this.setData({
       activeTask: e.currentTarget.dataset.item,
-      hiddenModalPut: !this.data.hiddenModalPut
+      hiddenModalPut: !this.data.hiddenModalPut,
+      existDetails: e.currentTarget.dataset.item.process.details
     })
-    // wx.showModal({
-    //   title: '提示',
-    //   content: '这是一个模态弹窗',
-    //   success(res) {
-    //     if (res.confirm) {
-    //       console.log('用户点击确定')
-    //     } else if (res.cancel) {
-    //       console.log('用户点击取消')
-    //     }
-    //   }
-    // })
-
   },
 
   //点击按钮弹出指定的hiddenModalPut弹出框
@@ -148,26 +159,57 @@ Page({
     })
   },
 
+  textInput(e: any) {
+    console.log('当前文本输入的事件为:', e)
+    this.setData({
+      updateDetail: e.detail.value
+    })
+  },
+
   //对话框点击确定和取消均进入此处 根据 index 进行判断
   tapDialogButton(e: any) {
     console.log('传入的事件为:', e)
     //如果点击的是确认按钮
     if (e.detail.item.index == CONFIRM_USER_TASK) {
       console.log('当前页面数据为:', this.data.activeTask)
-      apiUserTask.createUserTask({
-        name: this.data.activeTask.name,
-        detail: this.data.activeTask.detail,
-        task_id: this.data.activeTask.id,
+      console.log('当前的 detail 数据为:', this.data.updateDetail)
+      apiUserTask.updateProcess({
+        process_id: this.data.activeTask.process.id,
+        detail: this.data.updateDetail,
+        completed: 1,
       }).then((res: any) => {
-        console.log('添加用户任务的返回结果为:', res)
+        console.log('更新用户任务细节返回结果为::', res)
+        //更新完成之后重新拉取数据
+        this.setData({
+          hiddenModalPut: true
+        })
+        this.loadData()
       }).catch((err: any) => {
-        console.log('添加用户任务失败,结果为:', err)
+        console.log('更新用户任务细节失败,结果为:', err)
+        this.setData({
+          hiddenModalPut: true
+        })
+      })
+    } else if (e.detail.item.index == CANCEL_USR_TASK) {
+      this.setData({
+        hiddenModalPut: true
       })
     }
+
+  },
+
+  radioChange(e: any) {
+    console.log('点击了切换按钮')
+    var items = this.data.radioItems
+    for (var i = 0; i < items.length; ++i) {
+      items[i].checked = items[i].value == e.detail.value
+    }
+    console.log(items)
+
     this.setData({
-      hiddenModalPut: true
-    })
-  }
+      radioItems: items
+    });
+  },
 
 
 })

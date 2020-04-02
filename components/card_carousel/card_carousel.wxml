@@ -16,7 +16,7 @@
             </view>
             <view class='card-info'>
                 <view class='card-title {{item.title.length>9 ? "text-small" : ""}}'>
-                    {{item.title}}
+                    {{item.name}}
                 </view>
                 <view class='card-type'>{{item.category}}</view>
             </view>
