@@ -1,5 +1,5 @@
 // pages/user_task_list/user_task_list.ts
-const apiUserTask = require('../../utils/request/api')
+var api = require('../../utils/request/api')
 
 interface UserTaskItem {
   id: number
@@ -92,7 +92,7 @@ Page({
   },
 
   loadData() {
-    apiUserTask.userTaskList().then((res: any) => {
+    api.userTaskList().then((res: any) => {
       console.log(res)
       let list: Array<UserTaskItem> = new Array()
       for (let index = 0; index < res.data.length; index++) {
@@ -173,7 +173,7 @@ Page({
     if (e.detail.item.index == CONFIRM_USER_TASK) {
       console.log('当前页面数据为:', this.data.activeTask)
       console.log('当前的 detail 数据为:', this.data.updateDetail)
-      apiUserTask.updateProcess({
+      api.updateProcess({
         process_id: this.data.activeTask.process.id,
         detail: this.data.updateDetail,
         completed: 1,

@@ -10,7 +10,7 @@ App<IAppOption>({
     // 登录
     wx.login({
       success: res => {
-        console.log(res.code)
+        console.log("授权登录码为:", res.code)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       },
     })
@@ -31,6 +31,8 @@ App<IAppOption>({
               }
             },
           })
+        } else {
+          console.log('没有授权用户信息')
         }
       },
     })

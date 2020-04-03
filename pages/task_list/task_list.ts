@@ -1,8 +1,7 @@
 // task_list.ts
 // 获取应用实例
 //[事件传参](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html)
-const api = require('../../utils/request/api')
-
+var api = require('../../utils/request/api')
 interface TaskItem {
   id: number
   name: string

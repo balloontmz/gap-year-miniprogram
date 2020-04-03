@@ -1,7 +1,7 @@
 // components/card_carousel/card_carousel.ts
 
 var touch = [0, 0];
-const cardApi = require('../../utils/request/api')
+var api = require('../../utils/request/api')
 
 Component({
     /**
@@ -125,7 +125,7 @@ Component({
             })
 
             //拉取数据进行显示
-            cardApi.userTaskList().then((res: any) => {
+            api.userTaskList().then((res: any) => {
                 console.log(res)
                 let list = new Array()
                 for (let index = 0; index < res.data.length; index++) {
@@ -155,10 +155,60 @@ Component({
             let id = e.currentTarget.dataset.id
             console.log(id, e)
 
-            wx.navigateTo({
-                url: '/pages/detail/detail?id=' + id,
+            // wx.navigateTo({
+            //     url: '/pages/authorize/authorize',
+            // })
+        },
+
+        //注意先调 login,再调 userInfo
+        //https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/signature.html#%E5%8A%A0%E5%AF%86%E6%95%B0%E6%8D%AE%E8%A7%A3%E5%AF%86%E7%AE%97%E6%B3%95
+        onTapLogin(e: any) {
+            console.log(e)
+
+            //授权 code 有效期只有 5 分钟.
+            wx.login({
+                success: res => {
+                    console.log("第一步:授权登录码为:", res.code)
+                    wx.setStorage({
+                        data: res.code,
+                        key: 'temp-auth-code'
+                    })
+                    // 发送 res.code 到后台换取 openId, sessionKey, unionId
+                },
             })
         },
+
+        getUserInfo(e: any) {
+            //微信您文件存储
+            // https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.getStorageSync.html
+            console.log('第二步:授权获取到的信息为:', e)
+            var code = wx.getStorageSync('temp-auth-code')
+            api.wxLogin({
+                code: code,
+                encrypted_data: e.detail.encryptedData,
+                iv: e.detail.iv,
+            }).then((res: any) => {
+                console.log(res)
+                wx.setStorage({
+                    data: 'Bearer ' + res.data.access_token,
+                    key: 'token',
+                    success: function (e: any) {
+                        console.log('设置 token 成功回调', e)
+                        //设置登录成功tag
+                        wx.setStorage({
+                            data: true,
+                            key: 'loginStatus',
+                            success: function (e: any) {
+                                console.log('设置登录状态为已登录', e)
+                                //此时需要重新加载页面???
+                            }
+                        })
+                    }
+                })
+            }).catch((err: any) => {
+                console.log(err)
+            });
+        }
     },
 
     attached() {

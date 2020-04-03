@@ -25,12 +25,16 @@
                 <view class="bottom-button-area">
                     <view class="left" hover-class="none" hover-stop-propagation="false">
                         <navigator url="/pages/task_list/task_list" hover-class="navigator-hover">
-                            任务池
+                            <view class="task-button" hover-class="none" hover-stop-propagation="false">
+                                任务池
+                            </view>
                         </navigator>
                     </view>
                     <view class="right" hover-class="none" hover-stop-propagation="false">
                         <navigator url="/pages/user_task_list/user_task_list" hover-class="navigator-hover">
-                            我的任务
+                            <view class="task-button" hover-class="none" hover-stop-propagation="false">
+                                我的任务
+                            </view>
                         </navigator>
                     </view>
                 </view>

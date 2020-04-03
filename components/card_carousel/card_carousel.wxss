@@ -30,8 +30,8 @@
     justify-content: center;
     width: 550rpx;
     height: 40vh;
-    /* background-color: #ffffff; */
-    background-color: brown;
+    background-color: rgba(255, 255, 255, 0.2);
+    /* background-color: brown; */
     border-radius: 45rpx;
     box-shadow: 3rpx 3rpx 15rpx 3rpx rgba(0, 0, 0, 0.1);
     transition: all 0.5s;
@@ -69,7 +69,7 @@
 
 /* 卡片顶部状态栏 */
 .card-bar {
-    background-color: lightcoral;
+    /* background-color: lightcoral; */
     display: flex;
     flex-direction: row;
     width: 100%;

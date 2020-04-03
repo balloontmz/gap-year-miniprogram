@@ -21,7 +21,11 @@
                 <view class='card-type'>{{item.category}}</view>
             </view>
             <!-- 导航至其他页面 -->
-            <view class='card-detail' catchtap='onTapNavigateTo' data-id='{{item.id}}'>电影详情</view>
+            <!-- <view class='card-detail' data-id='{{item.id}}'> -->
+            <!-- <view class='card-detail' catchtap='onTapNavigateTo' data-id='{{item.id}}'>登录</view> -->
+            <button class='card-detail' bind:tap="onTapLogin" bindgetuserinfo="getUserInfo" open-type="getUserInfo">
+                快速完成
+            </button>
         </view>
     </view>
 </view>

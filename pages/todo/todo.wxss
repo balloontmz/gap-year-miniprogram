@@ -22,7 +22,7 @@
     width: 80%;
     height: 20vh;
     margin-left: 10vw;
-    background-color: wheat;
+    /* background-color: wheat; */
 }
 
 .text-title {
@@ -32,7 +32,7 @@
 /* ///////////// */
 
 .task-list-container {
-    background-color: green;
+    /* background-color: green; */
     /* 剩余的视口高度 */
     height: 60vh; 
 }
@@ -41,26 +41,37 @@
 .bottom-button-wrapper {
     height: 20%;
     width: 80vw;
-    background-color: thistle;
+    /* background-color: thistle; */
     margin:0 auto;
 }
 
 .bottom-button-area {
     height: 100rpx;
-    background-color: teal;
+    /* background-color: teal; */
     display: flex;
 }
 .bottom-button-area > .left {
     flex: 1 1 0;
-    background-color: yellow;
+    /* background-color: yellow; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .bottom-button-area > .right {
     flex: 1 1 0;
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.task-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    width: 30vw;
+    height: 80rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10rpx;
 }

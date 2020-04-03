@@ -18,9 +18,11 @@ const request = require('./config.js')
  */
 // exports.getPackages = (params) => request._get('package', params, { loading: false })
 
-exports.taskList = (params) => request._get('task', params, { loading: false })
+exports.taskList = (params) => request._get('todo/task', params, { loading: false })
 
-exports.userTaskList = (params) => request._get('user-task', params)
-exports.createUserTask = (params) => request._post('user-task', params)
+exports.userTaskList = (params) => request._get('todo/user-task', params)
+exports.createUserTask = (params) => request._post('todo/user-task', params)
 
-exports.updateProcess = (params) => request._post('user-task/update-process', params)
+exports.updateProcess = (params) => request._post('todo/user-task/update-process', params)
+
+exports.wxLogin = (params) => request._post('todo/wx-login', params)

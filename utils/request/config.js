@@ -27,7 +27,6 @@ const request = ({
         'Content-Type': 'application/json',
         'X-Requested-With': 'XMLHttpRequest',
         'Authorization': `${wx.getStorageSync('token')}`,
-        'X-Uuid': '730bfbed-33e7-4e25-aa2e-92dfd0dee72f'
       },
       ...config,
       complete: (res) => {
