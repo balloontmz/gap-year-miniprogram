@@ -6,7 +6,10 @@ App<IAppOption>({
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    if (!wx.getStorageSync('loginStatus')) {
+      console.log('没有查询到登录状态  直接设为 false')
+      wx.setStorageSync('loginStatus', false)
+    }
     // 登录
     wx.login({
       success: res => {

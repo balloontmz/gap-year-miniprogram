@@ -1,14 +1,17 @@
 // components/card_carousel/card_carousel.ts
 
 var touch = [0, 0];
-var api = require('../../utils/request/api')
+var api: ApiRequest.Request = require('../../utils/request/api')
 
 Component({
     /**
      * 组件的属性列表
      */
     properties: {
-
+        loginStatus: {
+            type: String,
+            value: 'false',
+        }
     },
 
     /**
@@ -125,7 +128,7 @@ Component({
             })
 
             //拉取数据进行显示
-            api.userTaskList().then((res: any) => {
+            api.userTaskList(null).then((res: any) => {
                 console.log(res)
                 let list = new Array()
                 for (let index = 0; index < res.data.length; index++) {
@@ -189,29 +192,48 @@ Component({
                 iv: e.detail.iv,
             }).then((res: any) => {
                 console.log(res)
-                wx.setStorage({
-                    data: 'Bearer ' + res.data.access_token,
-                    key: 'token',
-                    success: function (e: any) {
-                        console.log('设置 token 成功回调', e)
-                        //设置登录成功tag
-                        wx.setStorage({
-                            data: true,
-                            key: 'loginStatus',
-                            success: function (e: any) {
-                                console.log('设置登录状态为已登录', e)
-                                //此时需要重新加载页面???
-                            }
-                        })
-                    }
-                })
+                this.setUpUserToken(res)
             }).catch((err: any) => {
                 console.log(err)
             });
-        }
+        },
+
+        setUpUserToken(res: any) {
+            wx.setStorage({
+                data: 'Bearer ' + res.data.access_token,
+                key: 'token',
+                success: this.setLoginStatus(this.onLoginStatusChanged(this)),
+            })
+        },
+
+        setLoginStatus(callBack: WechatMiniprogram.SetStorageSuccessCallback): WechatMiniprogram.SetStorageSuccessCallback {
+            return function (e: WechatMiniprogram.GeneralCallbackResult) {
+                console.log('设置 token 成功回调', e)
+                //设置登录成功tag
+                // wx.setStorageSync(
+                //     'loginStatus',
+                //     true,
+                // )
+                wx.setStorage({
+                    key: 'loginStatus',
+                    data: true,
+                    success: callBack
+                })
+            }
+        },
+
+        onLoginStatusChanged(self): WechatMiniprogram.SetStorageSuccessCallback {
+            return function (e: WechatMiniprogram.GeneralCallbackResult) {
+                console.log('登录状态变更 回调', e)
+                var myEventDetail = {} // detail对象，提供给事件监听函数
+                var myEventOption = {} // 触发事件的选项
+                self.triggerEvent('loginStatusUpdated', myEventDetail, myEventOption)
+            }
+        },
     },
 
     attached() {
         this.getMovieList();
+        console.log('当前登录状态为:', this.properties.loginStatus)
     }
 })

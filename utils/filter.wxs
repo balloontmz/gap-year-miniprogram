@@ -115,6 +115,11 @@ var filter = {
     // return date.toTimeString()
     //格式化时间
     return (date.getHours() > 9 ? date.getHours() : '0' + date.getHours()) + ":" + (date.getMinutes() > 9 ? date.getMinutes() : '0' + date.getMinutes())
+  },
+  boolToString: function (value) {
+    console.log('当前需要转换的值为:', value)
+
+    return value == true ? 'true' : 'false'
   }
 }
 

@@ -8,7 +8,7 @@
             <view class="card-bar">
                 <view class="card-bar-left">
                     <!-- <view class="iconfont iconhome"></view> -->
-                    <text>此处图标</text>
+                    <mp-icon icon="add" color="black" size="25"></mp-icon>
                 </view>
                 <view class="card-bar-right">
                     <view>此处按钮</view>
@@ -23,9 +23,16 @@
             <!-- 导航至其他页面 -->
             <!-- <view class='card-detail' data-id='{{item.id}}'> -->
             <!-- <view class='card-detail' catchtap='onTapNavigateTo' data-id='{{item.id}}'>登录</view> -->
-            <button class='card-detail' bind:tap="onTapLogin" bindgetuserinfo="getUserInfo" open-type="getUserInfo">
-                快速完成
-            </button>
+            <view class="" hover-class="none" hover-stop-propagation="false" wx:if="{{loginStatus == 'false'}}">
+                <button class='card-detail' bind:tap="onTapLogin" bindgetuserinfo="getUserInfo" open-type="getUserInfo">
+                    登录/注册
+                </button>
+            </view>
+            <view class="" hover-class="none" hover-stop-propagation="false" wx:else>
+                <view class="card-detail" hover-class="none" hover-stop-propagation="false">
+                    快速完成
+                </view>
+            </view>
         </view>
     </view>
 </view>

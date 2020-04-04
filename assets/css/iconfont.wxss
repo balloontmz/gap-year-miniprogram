@@ -1,0 +1,29 @@
+@font-face {font-family: "iconfont";
+  src: 
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAUgAAsAAAAACwwAAATSAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMgqJGIclATYCJAMUCwwABCAFhG0HWxtECVFUTjJkPyRJSuSXmEcY+0owCCYOAAcAAACACRAP3+/3+7WP3HcxbZBEI92nk0gkTSRCgigWIiERimaG0JiuP//8Lqeq7omfdnnBzo2yqOdLlp1EvtdnoW6Gi1ABbAHrwO/eWs3214GoOzeqNzCM1Df8P8eSLwss/7WdS1Ysw5tG43vDUUT6yDaggRUAbhi7MIGnCfSatm9s+/a5IWYViiFgx4lWsZgNOZUcRmgtTcqVRdwDVZsuwEHCnf358U8QsyQ1U561c3yTifOv0b0B6OwatpdfgbP2/KCuI2OFUIjT1OCJCVe/Yht7075u0jqhVytJX6PbSnt3fj+uu/jaGZl71SBpNv94mWgoxn6IWTeUlVPpEhJfShKC3ztyIeR3ADpliKrH92KQuATEE8DM7NeRFLGbm1ueW/mxbErs7HZ+ijdZq8cl6TImjNiqxiQAbDQUxQEAJtjYwig6OoRkvZuXhHGUTLKyFtk+Asbv1Z8Bn/ERFQxMTBIISOCPf4ZOK3hkZm+2qSmbhHjB5mnHyUl/XxcQ2yMIkUwsEKAB8CTY/3HnpHTWlEPPjFz2tH/DckJOnIWN3iYRNaqivF8/t1kswxLoVcZRVVKgVCKlUbE6VqZCwFEZvHufUUGTMFamkMcW1iBGhakQfQMVkqktClXgbuX+ybhifiWOiaTgldWCqfVorXC8cydSLC2drFdE+XPJ9AyhghKkWDERnEMp5NVQGaKpVE2VQEpdO7okeF9COJlGVCkVEDSMP7cQLlJIoH0GYXy1FKuGSETEq8J1EFKidj9pDa4RuEsUfZdqhQOYW5kDYHvoriUnD2ervj7KKjp3eDQnjzgPZzSljK2I1tLEilqs8BsAo2GIXvbiojV45+KyFSjLtGD2SN3fT+3RB01myby7mNkAVj/LcSHg2xPt1jdgWhr4RpWZckPpj5J7Icyn9FPBvGAPcM2/6u/PyambV+0RlldtDeLiDW3mN1S30NbXjuPAnoOx9irSR32jJqA+aDLadwQq9rHgc4wjLm9X2keHQvxCt9vYv1bW/caarA/tek6Al0NTuHn0lfqr0WZhTQ5e/upib2tGb5nR9ZgFCUVNRYkDZH1UplReYO6a5kNRkIN+wDjeufH+4yX1sfssg8zTzIMs++G93EQ0ZWTlGnh1eRus82TsOGJIoLsKPUDSJOty4mVi58TziS+IAfI59IQf5d17fy9cOf4/u/DSb/ksXqlHie4qvXrKx9SktOp5VpVcVESN4qqFn6or+dbqUYcnRP3oTnqKo6P+2jFPlG4ntCZ8SDqmIGvNIApmBao+q9BorUGvZXfX9xlDJkTpwZIvAGHYNySD3iAb9oMomF+oJv1DYzgmoNdubNyxz1zo+SvCmDGDZAQ6NV2peXje6ayh6rVjCmpsZgvJ6gz4jhet3GEXqY1zbF8FzBIkmQ7cgudhu22gIlNgyk7OXB26rkx7Jyc1HTFvC0ExhjIgMQK0lNElzc3ZfOzja5DS0xajnGkF6RZELL1z4HN4JRB3xm6paceyv9WnBBiT+DiJGB3gFvpRWy0aoEo/rIBSzJHXyFcOuWg5Wdbo9G/uHGPVzzSjck6NFDlK1Gi0B6t9P2VoNG0xpjTfriOz7iqb0ngy9oq3aMBO5qaDQgAAAA==') format('woff2'),
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconcategory:before {
+  content: "\e627";
+}
+
+.iconsearch:before {
+  content: "\e612";
+}
+
+.iconSettingscontroloptions:before {
+  content: "\e9cb";
+}
+
+.iconhome:before {
+  content: "\e964";
+}
+
