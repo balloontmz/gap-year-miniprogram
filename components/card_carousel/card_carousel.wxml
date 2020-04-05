@@ -1,4 +1,5 @@
 <!-- components/card_carousel/card_carousel.wxml -->
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
 <view class='card-list-wrapper'>
     <view x-scroll='false' class="card-list" style='transform: translateX( {{cardDistance}}rpx)' bindtouchstart="onTouchStart" bindtouchend="onTouchEnd">
         <!-- 循环 -->
@@ -12,13 +13,17 @@
                 </view>
                 <view class="card-bar-right">
                     <view>此处按钮</view>
+                    <view>{{ filters.statusToName(item.processStatus) }}</view>
                 </view>
             </view>
             <view class='card-info'>
                 <view class='card-title {{item.title.length>9 ? "text-small" : ""}}'>
                     {{item.name}}
                 </view>
-                <view class='card-type'>{{item.category}}</view>
+                <view class='card-content {{item.title.length>9 ? "text-small" : ""}}'>
+                    {{item.detail}}
+                </view>
+                <!-- <view class='card-type'>{{item.category}}</view> -->
             </view>
             <!-- 导航至其他页面 -->
             <!-- <view class='card-detail' data-id='{{item.id}}'> -->
@@ -29,7 +34,7 @@
                 </button>
             </view>
             <view class="" hover-class="none" hover-stop-propagation="false" wx:else>
-                <view class="card-detail" hover-class="none" hover-stop-propagation="false">
+                <view class="card-detail" hover-class="none" hover-stop-propagation="false" bind:tap="onQuickCompleted" data-process-id="{{item.processID}}">
                     快速完成
                 </view>
             </view>

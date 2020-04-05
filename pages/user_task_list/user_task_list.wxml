@@ -1,6 +1,11 @@
 <!-- pages/user_task_list/user_task_list.wxml -->
 <wxs module="filters" src="../../utils/filter.wxs"></wxs>
 <view class="task-list-page" hover-class="none" hover-stop-propagation="false">
+    <nav-bar title="任务池" title-color="#e5e5e5" back-icon="back">
+        <mp-icon icon="back" color="#e5e5e5" size="15"></mp-icon>
+    </nav-bar>
+    <!-- <view class="" hover-class="none" hover-stop-propagation="false" style="height:100rpx;"></view> -->
+    <empty-view></empty-view>
     <view>
         <!-- <search-box id="SearchBar" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear"></search-box> -->
     </view>
@@ -28,7 +33,7 @@
                     </view>
                     <!-- 头部结尾 -->
                     <view class="header-end-wrapper" hover-class="none" hover-stop-propagation="false">
-                        comment area
+                        评论区
                     </view>
                 </view>
                 <!-- -------- -->

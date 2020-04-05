@@ -27,7 +27,7 @@
 
 .text-title {
     font-size: 60rpx;
-    text-align: center;
+    text-align: left;
 }
 /* ///////////// */
 
@@ -66,12 +66,12 @@
 }
 
 .task-button {
-    background-color: rgba(255, 255, 255, 0.2);
     color: #ffffff;
     width: 30vw;
     height: 80rpx;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10rpx;
 }

@@ -1,6 +1,10 @@
 {
   "usingComponents": {
     "search-box": "/components/search_box/search_box",
-    "mp-dialog": "/components/dialog/dialog"
-  }
+    "mp-dialog": "/components/dialog/dialog",
+    "nav-bar": "/components/navbar/navbar",
+    "empty-view": "/components/empty_view/empty_view",
+    "mp-icon": "/components/icon/icon"
+  },
+  "navigationStyle": "custom"
 }

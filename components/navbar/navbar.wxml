@@ -3,9 +3,9 @@
 <view class='topbar'>
     <view class='status' style="height:{{statusHeight}}px"></view>
     <view class='navbar' style="height:{{navHeight}}px">
-        <view class='navbar_back' bindtap='backClick'>
+        <view class='navbar_back' bindtap='backClick' wx:if="{{backIcon != ''}}">
             <!-- <image src='../images/black_back.png'></image> -->
-            <view>-></view>
+            <slot></slot>
         </view>
         <view class='navbar_title' style="height:{{navHeight}}px">
             <view style="color: {{titleColor}};">{{title}}</view>

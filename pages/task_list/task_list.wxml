@@ -2,6 +2,11 @@
 <!-- [flex 控制子元素在主轴上的比例](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Controlling_Ratios_of_Flex_Items_Along_the_Main_Ax) -->
 <!-- [微信官方开发的组件库](https://developers.weixin.qq.com/miniprogram/dev/extended/weui/dialog.html) -->
 <view class="task-list-page" hover-class="none" hover-stop-propagation="false">
+    <nav-bar title="任务池" title-color="#e5e5e5" back-icon="back">
+        <mp-icon icon="back" color="#e5e5e5" size="15"></mp-icon>
+    </nav-bar>
+    <!-- <view class="" hover-class="none" hover-stop-propagation="false" style="height:100rpx;"></view> -->
+    <empty-view></empty-view>
     <view>
         <search-box id="SearchBar" addflag="{{addflag}}" addimg="{{addimg}}" bind:addhandle="addhandle" searchstr="{{searchstr}}" bind:searchList="searchList" bind:endsearchList="endsearchList" bind:cancelsearch="cancelsearch" bind:activity_clear="activity_clear"></search-box>
     </view>
@@ -12,15 +17,16 @@
                 <view class="card-header" hover-class="none" hover-stop-propagation="false">
                     <!-- 头部头像 -->
                     <view class="header-avatar-wrapper" hover-class="none" hover-stop-propagation="false">
-                        <view class="header-avatar" hover-class="none" hover-stop-propagation="false">
+                        <image class="header-avatar" src="{{item.avatar}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                        <!-- <view class="header-avatar" hover-class="none" hover-stop-propagation="false">
                             circle
-                        </view>
+                        </view> -->
                     </view>
                     <!-- 头部中心 -->
                     <view class="header-center-wrapper" hover-class="none" hover-stop-propagation="false">
                         <view class="header-center" hover-class="none" hover-stop-propagation="false">
                             <view class="header-title" hover-class="none" hover-stop-propagation="false">
-                                title
+                                {{ item.name }}
                             </view>
                             <view class="header-time" hover-class="none" hover-stop-propagation="false">
                                 2020-03-30
@@ -29,7 +35,7 @@
                     </view>
                     <!-- 头部结尾 -->
                     <view class="header-end-wrapper" hover-class="none" hover-stop-propagation="false">
-                        comment area
+                        评论区
                     </view>
                 </view>
                 <!-- -------- -->

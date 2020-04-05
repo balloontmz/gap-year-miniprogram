@@ -1,12 +1,13 @@
 // task_list.ts
 // 获取应用实例
 //[事件传参](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html)
-var api = require('../../utils/request/api')
+var api: ApiRequest.Request = require('../../utils/request/api')
 interface TaskItem {
   id: number
   name: string
   detail: string
   showMore: boolean
+  avatar: string
 }
 
 const CONFIRM = 1
@@ -25,7 +26,8 @@ Page({
       id: 0,
       name: '',
       detail: '',
-      showMore: false
+      showMore: false,
+      avatar: '',
     },
     buttons: [{ text: '取消', index: CANCEL }, { text: '确定', index: CONFIRM }],
   },
@@ -73,7 +75,7 @@ Page({
   },
 
   loadData() {
-    api.taskList().then((res: any) => {
+    api.taskList({}).then((res: any) => {
       console.log(res)
       let list: Array<TaskItem> = new Array()
       for (let index = 0; index < res.data.length; index++) {
@@ -82,7 +84,8 @@ Page({
           id: element.id,
           name: element.name,
           detail: element.detail,
-          showMore: false
+          showMore: false,
+          avatar: element.owner ? element.owner.avatar : 'none'
         })
 
       }

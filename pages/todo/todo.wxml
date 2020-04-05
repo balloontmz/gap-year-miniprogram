@@ -11,7 +11,7 @@
                 <view class="text-title">你好呀</view>
                 <view class="text-detail">
                     <view>下面是你的任务清单,</view>
-                    <view>今天你有四份任务尚未完成.</view>
+                    <view>今天你有 {{ loginStatus ? taskCount : '*'}} 份任务尚未完成.</view>
                 </view>
             </view>
         </view>
@@ -20,26 +20,31 @@
             <!-- [轮播图无缝滚动](https://www.cnblogs.com/yxxrui/p/wechatDiySlider.html) -->
             <!-- [卡片式轮播图](https://zhuanlan.zhihu.com/p/39744795) -->
             <!-- [旋转木马,缩放轮播图效果](https://juejin.im/post/5b5a86125188251aa91dbecf) -->
-            <card-carousel bind:loginStatusUpdated="loginStatusChanged" login-status="{{ filters.boolToString(loginStatus) }}"></card-carousel>
+            <card-carousel bind:loginStatusUpdated="loginStatusChanged" login-status="{{ filters.boolToString(loginStatus) }}" bind:fetchUserUnCompletedTask="userTaskFetch"></card-carousel>
             <view class="bottom-button-wrapper">
                 <view class="bottom-button-area">
                     <view class="left" hover-class="none" hover-stop-propagation="false">
-                        <navigator url="/pages/task_list/task_list" hover-class="navigator-hover">
+                        <view class="task-button" hover-class="none" hover-stop-propagation="false" bind:tap="onTapNavigateBtn" data-path="/pages/task_list/task_list">
+                            任务池
+                        </view>
+                        <!-- <navigator url="/pages/task_list/task_list" hover-class="navigator-hover">
                             <view class="task-button" hover-class="none" hover-stop-propagation="false">
                                 任务池
                             </view>
-                        </navigator>
+                        </navigator> -->
                     </view>
                     <view class="right" hover-class="none" hover-stop-propagation="false">
-                        <navigator url="/pages/user_task_list/user_task_list" hover-class="navigator-hover">
+                        <view class="task-button" hover-class="none" hover-stop-propagation="false" bind:tap="onTapNavigateBtn" data-path="/pages/user_task_list/user_task_list">
+                            我的任务
+                        </view>
+                        <!-- <navigator url="/pages/user_task_list/user_task_list" hover-class="navigator-hover">
                             <view class="task-button" hover-class="none" hover-stop-propagation="false">
                                 我的任务
                             </view>
-                        </navigator>
+                        </navigator> -->
                     </view>
                 </view>
             </view>
         </view>
     </view>
 </view>
-<icon class="iconfont iconcategory"></icon>

@@ -1,5 +1,5 @@
 // pages/user_task_list/user_task_list.ts
-var api = require('../../utils/request/api')
+var api: ApiRequest.Request = require('../../utils/request/api')
 
 interface UserTaskItem {
   id: number
@@ -92,7 +92,7 @@ Page({
   },
 
   loadData() {
-    api.userTaskList().then((res: any) => {
+    api.userTaskList({}).then((res: any) => {
       console.log(res)
       let list: Array<UserTaskItem> = new Array()
       for (let index = 0; index < res.data.length; index++) {

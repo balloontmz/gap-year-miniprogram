@@ -5,7 +5,7 @@ const baseUrl = 'http://127.0.0.1:8080/'  // 正式服'
 
 let lastCode = ''
 // 无需登录接口白名单
-const whiteList = ['mini-setting', 'express/query']
+const whiteList = ['']
 const request = ({
   url = '',
   params = {},
@@ -37,8 +37,9 @@ const request = ({
           resolve(res.data)
         } else if (res.statusCode === 401 && lastCode !== 401) {
           (!whiteList.includes(url)) && (lastCode = res.statusCode)
-          wx.navigateTo({
-            url: '/pages/authorize/authorize'
+          wx.showToast({
+            title: '暂无授权',
+            icon: 'none'
           })
           return
         } else if (lastCode !== 401 && res.statusCode >= 500) {

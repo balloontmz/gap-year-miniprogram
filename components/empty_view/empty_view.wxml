@@ -1,0 +1,6 @@
+<!-- components/empty_view/empty_view.wxml -->
+<view class="head-row">
+    <view class="empty-view" style="height:{{headHeight}}px"></view>
+    <!-- 顶部 tab 栏 -->
+    <slot></slot>
+</view>

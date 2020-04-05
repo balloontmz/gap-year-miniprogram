@@ -120,6 +120,24 @@ var filter = {
     console.log('当前需要转换的值为:', value)
 
     return value == true ? 'true' : 'false'
+  },
+  statusToName: function (status) {
+    var name = '未开始'
+    switch (status) {
+      case 0:
+        name = '未开始'
+        break;
+      case 1:
+        name = '已完成'
+        break;
+      case 2:
+        name = '未完成'
+        break;
+
+      default:
+        break;
+    }
+    return name
   }
 }
 

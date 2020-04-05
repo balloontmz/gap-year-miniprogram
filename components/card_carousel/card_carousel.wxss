@@ -30,7 +30,7 @@
     justify-content: center;
     width: 550rpx;
     height: 40vh;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.3);
     /* background-color: brown; */
     border-radius: 45rpx;
     box-shadow: 3rpx 3rpx 15rpx 3rpx rgba(0, 0, 0, 0.1);
@@ -83,7 +83,7 @@
     text-align: left;
     font-size: 40rpx;
     color: black;
-    background-color: lightgreen;
+    /* background-color: lightgreen; */
 }
 
 .card-bar-right {
@@ -93,7 +93,7 @@
     text-align: right;
     font-size: 30rpx;
     color: #c8c8c8;
-    background-color:blueviolet;
+    /* background-color:blueviolet; */
 }
 
 /* 卡片信息 */
@@ -101,13 +101,22 @@
     text-align: center;
     margin: 25rpx;
     line-height: 1;
-    color: #342158;
-    background-color: hotpink;
+    /* color: #342158; */
+    color: #ffffff;
+    /* background-color: hotpink; */
 }
   
 .card-title {
     font-size: 50rpx;
     margin-bottom: 10rpx;
+    font-weight: bold;
+    height: 50rpx;
+}
+
+.card-content {
+    font-size: 30rpx;
+    margin-bottom: 10rpx;
+    height: 15vh;
     font-weight: bold;
 }
   
@@ -123,15 +132,16 @@
 /* 卡片详情按钮 */
 .card-detail {
     box-sizing: border-box;
-    color: #342158;
+    /* color: #342158; */
+    color: #ffffff;
     display: block;
     width: 350rpx;
     height: 80rpx;
     font-size: 35rpx;
     line-height: 76rpx;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 40rpx;
-    border: 2rpx solid #342158;
-    background-color: lawngreen;
+    /* background-color: lawngreen; */
 }
 /* //////////////////// */

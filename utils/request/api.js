@@ -24,5 +24,6 @@ exports.userTaskList = (params) => request._get('todo/user-task', params)
 exports.createUserTask = (params) => request._post('todo/user-task', params)
 
 exports.updateProcess = (params) => request._post('todo/user-task/update-process', params)
+exports.quickComplete = (params) => request._post(`todo/user-task/quick-complete?process_id=${params.process_id}`, params)
 
 exports.wxLogin = (params) => request._post('todo/wx-login', params)
