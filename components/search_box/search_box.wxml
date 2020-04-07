@@ -11,7 +11,9 @@
         </view>
         <view wx:if="{{searchflag}}" bindtap='cancelsearch' class="activity_seabtn">取消</view>
         <view class='activity_add' wx:if="{{addflag}}">
-            <image bindtap='addhandle' src='{{addimg}}'></image>
+            <view class="" bindtap='addhandle' hover-class="none" hover-stop-propagation="false">
+                <mp-icon icon="add" color="black" size="25"></mp-icon>
+            </view>
         </view>
     </view>
 </view>

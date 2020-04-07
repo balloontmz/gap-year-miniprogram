@@ -8,6 +8,7 @@ interface TaskItem {
   detail: string
   showMore: boolean
   avatar: string
+  createdAt: string
 }
 
 const CONFIRM = 1
@@ -28,6 +29,7 @@ Page({
       detail: '',
       showMore: false,
       avatar: '',
+      createdAt: '',
     },
     buttons: [{ text: '取消', index: CANCEL }, { text: '确定', index: CONFIRM }],
   },
@@ -85,7 +87,8 @@ Page({
           name: element.name,
           detail: element.detail,
           showMore: false,
-          avatar: element.owner ? element.owner.avatar : 'none'
+          avatar: element.owner ? element.owner.avatar : 'none',
+          createdAt: element.created_at
         })
 
       }

@@ -1,0 +1,119 @@
+<!-- pages/user_center/user_center.wxml -->
+<nav-bar title="个人中心" title-color="#e5e5e5" back-icon="back">
+    <mp-icon icon="back" color="#e5e5e5" size="15"></mp-icon>
+</nav-bar>
+<!-- <view class="" hover-class="none" hover-stop-propagation="false" style="height:100rpx;"></view> -->
+<view class="main-container" hover-class="none" hover-stop-propagation="false">
+    <!-- <view class="header-wrapper" hover-class="none" hover-stop-propagation="false"> -->
+    <view class="header-circle-wrapper" hover-class="none" hover-stop-propagation="false" style="background-image:url('http://47.100.124.234:10012/apidoc/plant.jpg');">
+        <!-- <image class="header-circle-wrapper" src="../../assets/images/plant.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="" style="width:100%;height:100%"> -->
+        <view class="empty-content" hover-class="none" hover-stop-propagation="false"></view>
+        <empty-view></empty-view>
+        <!-- 用户信息块容器 -->
+        <view class="user-info-wrapper" hover-class="none" hover-stop-propagation="false">
+            <view class="user-info-bar" hover-class="none" hover-stop-propagation="false">
+                <view class="avatar" hover-class="none" hover-stop-propagation="false">
+                    <image class="header-avatar" src="../../assets/images/gap-year.jpg" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                    <!-- <view class="header-avatar" hover-class="none" hover-stop-propagation="false"></view> -->
+                </view>
+                <view class="info" hover-class="none" hover-stop-propagation="false">
+                    <view class="info-name" hover-class="none" hover-stop-propagation="false">
+                        <view class="info-name-text" hover-class="none" hover-stop-propagation="false">
+                            GAP YEAR 用户
+                        </view>
+                    </view>
+                    <view class="info-id" hover-class="none" hover-stop-propagation="false">
+                        UID: 1383838438
+                    </view>
+                    <view class="info-time" hover-class="none" hover-stop-propagation="false">
+                        2020.04.04 加入 GAP YEAR
+                    </view>
+                </view>
+                <view class="buttons" hover-class="none" hover-stop-propagation="false">
+                    <view class="end-button" hover-class="none" hover-stop-propagation="false">
+                        按钮
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="data-display-wrapper" hover-class="none" hover-stop-propagation="false">
+            <view class="data-display" hover-class="none" hover-stop-propagation="false">
+                <view class="data-item" hover-class="none" hover-stop-propagation="false">
+                    <view class="data-item-child" hover-class="none" hover-stop-propagation="false">
+                        8
+                    </view>
+                    <view class="data-item-child" hover-class="none" hover-stop-propagation="false">
+                        任务
+                    </view>
+                </view>
+                <view class="data-item" hover-class="none" hover-stop-propagation="false">
+                    <view class="data-item-child" hover-class="none" hover-stop-propagation="false">
+                        0
+                    </view>
+                    <view class="data-item-child" hover-class="none" hover-stop-propagation="false">
+                        已关闭
+                    </view>
+                </view>
+                <view class="data-item" hover-class="none" hover-stop-propagation="false">
+                    <view class="data-item-child" hover-class="none" hover-stop-propagation="false">
+                        0
+                    </view>
+                    <view class="data-item-child" hover-class="none" hover-stop-propagation="false">
+                        好友
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- </image> -->
+    <!-- <empty-view></empty-view> -->
+    <!-- </view> -->
+    <view class="button-bar-wrapper" hover-class="none" hover-stop-propagation="false" style="">
+        <view class="button-bar-area" hover-class="none" hover-stop-propagation="false">
+            <view class="button-item" hover-class="none" hover-stop-propagation="false">
+                <view class="button-item-child" hover-class="none" hover-stop-propagation="false">
+                    0
+                </view>
+                <view class="button-item-child" hover-class="none" hover-stop-propagation="false">
+                    好友
+                </view>
+            </view>
+            <view class="button-item" hover-class="none" hover-stop-propagation="false">
+                <view class="button-item-child" hover-class="none" hover-stop-propagation="false">
+                    0
+                </view>
+                <view class="button-item-child" hover-class="none" hover-stop-propagation="false">
+                    好友
+                </view>
+            </view>
+            <view class="button-item" hover-class="none" hover-stop-propagation="false">
+                <view class="button-item-child" hover-class="none" hover-stop-propagation="false">
+                    0
+                </view>
+                <view class="button-item-child" hover-class="none" hover-stop-propagation="false">
+                    好友
+                </view>
+            </view>
+            <view class="button-item" hover-class="none" hover-stop-propagation="false">
+                <view class="button-item-child" hover-class="none" hover-stop-propagation="false">
+                    0
+                </view>
+                <view class="button-item-child" hover-class="none" hover-stop-propagation="false">
+                    好友
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="normal-card-wrapper" hover-class="none" hover-stop-propagation="false">
+        <view class="button-bar-area" hover-class="none" hover-stop-propagation="false"></view>
+    </view>
+    <view class="normal-card-wrapper" hover-class="none" hover-stop-propagation="false">
+        <view class="button-bar-area" hover-class="none" hover-stop-propagation="false"></view>
+    </view>
+    <view class="normal-card-wrapper" hover-class="none" hover-stop-propagation="false">
+        <view class="button-bar-area" hover-class="none" hover-stop-propagation="false"></view>
+    </view>
+    <view class="normal-card-wrapper" hover-class="none" hover-stop-propagation="false">
+        <view class="button-bar-area" hover-class="none" hover-stop-propagation="false"></view>
+    </view>
+</view>

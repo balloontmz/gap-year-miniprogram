@@ -1,6 +1,7 @@
 <!-- pages/task_list/task_list.wxml -->
 <!-- [flex 控制子元素在主轴上的比例](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Controlling_Ratios_of_Flex_Items_Along_the_Main_Ax) -->
 <!-- [微信官方开发的组件库](https://developers.weixin.qq.com/miniprogram/dev/extended/weui/dialog.html) -->
+<wxs module="filters" src="../../utils/filter.wxs"></wxs>
 <view class="task-list-page" hover-class="none" hover-stop-propagation="false">
     <nav-bar title="任务池" title-color="#e5e5e5" back-icon="back">
         <mp-icon icon="back" color="#e5e5e5" size="15"></mp-icon>
@@ -29,13 +30,13 @@
                                 {{ item.name }}
                             </view>
                             <view class="header-time" hover-class="none" hover-stop-propagation="false">
-                                2020-03-30
+                                {{ filters.formatDate(item.createdAt) }}
                             </view>
                         </view>
                     </view>
                     <!-- 头部结尾 -->
                     <view class="header-end-wrapper" hover-class="none" hover-stop-propagation="false">
-                        评论区
+                        <mp-icon icon="comment" color="black" size="25"></mp-icon>
                     </view>
                 </view>
                 <!-- -------- -->

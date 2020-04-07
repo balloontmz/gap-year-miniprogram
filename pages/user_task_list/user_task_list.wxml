@@ -1,7 +1,7 @@
 <!-- pages/user_task_list/user_task_list.wxml -->
 <wxs module="filters" src="../../utils/filter.wxs"></wxs>
 <view class="task-list-page" hover-class="none" hover-stop-propagation="false">
-    <nav-bar title="任务池" title-color="#e5e5e5" back-icon="back">
+    <nav-bar title="我的任务" title-color="#e5e5e5" back-icon="back">
         <mp-icon icon="back" color="#e5e5e5" size="15"></mp-icon>
     </nav-bar>
     <!-- <view class="" hover-class="none" hover-stop-propagation="false" style="height:100rpx;"></view> -->
@@ -16,9 +16,10 @@
                 <view class="card-header" hover-class="none" hover-stop-propagation="false">
                     <!-- 头部头像 -->
                     <view class="header-avatar-wrapper" hover-class="none" hover-stop-propagation="false">
-                        <view class="header-avatar" hover-class="none" hover-stop-propagation="false">
+                        <image class="header-avatar" src="{{ item.avatar }}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                        <!-- <view class="header-avatar" hover-class="none" hover-stop-propagation="false">
                             circle
-                        </view>
+                        </view> -->
                     </view>
                     <!-- 头部中心 -->
                     <view class="header-center-wrapper" hover-class="none" hover-stop-propagation="false">
@@ -27,20 +28,26 @@
                                 {{item.name}}
                             </view>
                             <view class="header-time" hover-class="none" hover-stop-propagation="false">
-                                2020-03-30
+                                {{ filters.formatDate(item.createdAt) }}
                             </view>
                         </view>
                     </view>
                     <!-- 头部结尾 -->
                     <view class="header-end-wrapper" hover-class="none" hover-stop-propagation="false">
-                        评论区
+                        <view class="" hover-class="none" hover-stop-propagation="false" wx:if="{{item.taskID == 0}}">
+                            发布
+                        </view>
+                        <view class="header-end-button" hover-class="none" hover-stop-propagation="false" wx:else>
+                            详情
+                        </view>
                     </view>
                 </view>
                 <!-- -------- -->
+                <!-- 这里是内容区域 -->
                 <view class="task-base-card" hover-class="none" hover-stop-propagation="false">
                     {{item.detail}}
                 </view>
-                <view class="task-more-card" hover-class="none" hover-stop-propagation="false" wx:if="{{item.showMore}}">
+                <view class="task-more-card" hover-class="none" hover-stop-propagation="false">
                     <view class="left-button btn" hover-class="none" hover-stop-propagation="false">
                         <!-- 历史记录 -- 进入新页面 -->
                         历史记录
@@ -75,10 +82,10 @@
             </radio-group>
         </view>
     </view>
-    <view class="top grid" style="background-color:grey;">
+    <view class="top grid" style="background-color:transparent;">
         <!-- 每天每个任务能被更新多次 -->
         <label class="title col-0">更新</label>
-        <view class="" hover-class="none" hover-stop-propagation="false" style="background-color:green;width: 50vw;">
+        <view class="" hover-class="none" hover-stop-propagation="false" style="background-color:transparent;width: 50vw;">
             <view class="" hover-class="none" hover-stop-propagation="false" wx:for="{{existDetails}}" style="background-color:red;width: 50vw;display: -webkit-box; display: box; ">
                 <view class="" hover-class="none" hover-stop-propagation="false">
                     {{ filters.formatTime(item.time) }}

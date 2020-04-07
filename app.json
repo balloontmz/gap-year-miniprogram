@@ -4,6 +4,7 @@
     "pages/index/index",
     "pages/task_list/task_list",
     "pages/user_task_list/user_task_list",
+    "pages/user_center/user_center",
     "pages/logs/logs"
   ],
   "window": {

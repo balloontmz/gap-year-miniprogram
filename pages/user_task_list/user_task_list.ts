@@ -7,6 +7,9 @@ interface UserTaskItem {
   detail: string
   process: Process
   showMore: boolean
+  avatar: string
+  createdAt: string
+  taskID: number
 }
 
 interface Process {
@@ -38,7 +41,10 @@ Page({
       name: '',
       detail: '',
       process: {},
-      showMore: false
+      showMore: false,
+      avatar: '',
+      createdAt: '',
+      taskID: 0,
     },
     updateDetail: '',
     existDetails: new Array<Detail>(),
@@ -107,7 +113,10 @@ Page({
             completed: false,
             details: element.process.details ?? [],
           },
-          showMore: false
+          showMore: false,
+          avatar: element.owner ? element.owner.avatar : 'none',
+          createdAt: element.created_at,
+          taskID: element.task_id
         })
 
       }

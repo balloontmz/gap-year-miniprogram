@@ -2,6 +2,11 @@
 <wxs module="filters" src="../../utils/filter.wxs"></wxs>
 <!-- 顶部状态栏 -->
 <nav-bar title="备忘录" title-color="black"></nav-bar>
+<!-- https://blog.csdn.net/mentalitys/article/details/98031691 -->
+<button data-path="/pages/user_center/user_center" bind:tap="onTapNavigateBtn" bindtouchmove="buttonMove" bindtouchstart="buttonStart" bindtouchend="buttonEnd" style="top:{{buttonTop}}px;left:{{buttonLeft}}px;width: 50px;height:50px;border-radius:50px;position:fixed;background-color: rgba(255, 255, 255, 0.2);diaplay:flex;align-items:center;justify-content: center;color:#fff;z-index: 10000;">
+    <!-- + -->
+    <mp-icon icon="sticker" color="black" size="25"></mp-icon>
+</button>
 <view class="flex-column todo-container" style="background-color:#F7CAC7;">
     <header-tab-bar active="1" activeColor="black"></header-tab-bar>
     <view class="list-view">

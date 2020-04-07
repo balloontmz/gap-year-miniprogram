@@ -1,7 +1,26 @@
 // const baseUrl = 'https://dev-jiyun-api-v2.nle-tech.com/api/client/' // 开发服
 // const baseUrl = 'https://jiyun-test-api-v2.nle-tech.com/api/client/'  // 测试服
 // const baseUrl = 'https://api-jiyun-v2.haiouoms.com/api/client/'  // 正式服'
-const baseUrl = 'http://127.0.0.1:8080/'  // 正式服'
+// const baseUrl = 'http://127.0.0.1:8080/'  // 正式服'
+// let baseUrl = 'http://127.0.0.1:8081';
+let baseUrl = 'http://127.0.0.1:8081/'
+
+switch (__wxConfig.envVersion) {
+  case 'develop':
+    baseUrl = 'http://127.0.0.1:8080/';
+    break;
+  case 'trial':
+    baseUrl = 'https://api.gap-year.top/';
+    break;
+  case 'release':
+    baseUrl = 'http://127.0.0.1:8080/';
+    break;
+  default:
+    baseUrl = 'http://47.100.124.234:10012/';
+}
+
+//调用
+
 
 let lastCode = ''
 // 无需登录接口白名单

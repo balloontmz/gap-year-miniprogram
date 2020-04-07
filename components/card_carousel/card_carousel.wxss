@@ -74,6 +74,7 @@
     flex-direction: row;
     width: 100%;
     min-height: 100rpx;
+    margin-top: 10rpx;
 }
 
 .card-bar-left {
@@ -87,7 +88,7 @@
 }
 
 .card-bar-right {
-    /* padding-top: 40rpx; */
+    padding-top: 10rpx;
     padding-right: 20rpx;
     width: 50%;
     text-align: right;

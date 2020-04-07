@@ -12,7 +12,6 @@
                     <mp-icon icon="add" color="black" size="25"></mp-icon>
                 </view>
                 <view class="card-bar-right">
-                    <view>此处按钮</view>
                     <view>{{ filters.statusToName(item.processStatus) }}</view>
                 </view>
             </view>

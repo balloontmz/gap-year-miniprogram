@@ -1,0 +1,197 @@
+/* pages/user_center/user_center.wxss */
+
+.main-container {
+    background-color: rgba(128, 128, 128, .2);
+    width: 100vw;
+}
+
+.header-wrapper {
+    background-color: red;
+    height: 80vw;
+    width: 100vw;
+    /* border-bottom-left-radius: 10vw;
+    border-bottom-right-radius: 10vw; */
+}
+
+.header-circle-wrapper {
+    height: 300vw;
+    width: 300vw;
+    border-radius: 600vw;
+    margin-top: -220vw;
+    margin-left: -100vw;
+    /* background-color: royalblue; */
+}
+
+.empty-content{
+    height: 220vw;
+}
+
+/* 用户信息容器,宽度不限,内容居中,由于 circle 内容过大,所以需要子元素限定宽高并居中 */
+.user-info-wrapper {
+    height: 20vw;
+    /* background-color: green; */
+    /* padding-top: 2vw; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 用户信息样式 */
+.user-info-bar {
+    /* margin-top: 5vw; */
+    height: 20vw;
+    width: 100vw;
+    /* background-color: salmon; */
+    color: black;
+    display: flex;
+    flex-direction: row;
+}
+
+.user-info-bar > .avatar {
+    width: 30vw;
+    /* background-color: blue; */
+}
+
+.header-avatar {
+    height: 18vw;    
+    width: 18vw;    
+    border-radius: 9vw;
+    background-color: grey;
+    margin-top: 1vw;
+    margin-left: 6vw;
+}
+
+.user-info-bar > .info {
+    width: 50vw;
+    /* background-color: green; */
+    color: #ffffff;
+}
+
+.info-name{
+    height: 10vw;
+    /* background-color: rebeccapurple; */
+    font-size: 6vw;
+}
+.info-name-text{
+    padding-top: 1vw;
+}
+.info-id{
+    height: 5vw;
+    /* background-color: greenyellow; */
+    font-size: 3vw;
+}
+.info-time{
+    height: 4vw;
+    /* background-color: blueviolet; */
+    font-size: 3vw;
+}
+
+.user-info-bar > .buttons {
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: yellow; */
+}
+
+.end-button {
+    width: 18vw;
+    height: 9vw;
+    /* background-color: brown; */
+    border-radius: 9vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 3vw;
+    color: greenyellow;
+    border-style: solid;
+    border-width: 0.2vw;
+    border-color: greenyellow;
+}
+
+/* 数据展示容器 */
+.data-display-wrapper {
+    height: 20vw;
+    /* background-color: indigo; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.data-display {
+    height: 20vw;
+    width: 80vw;
+    /* background-color: khaki; */
+    display: flex;
+}
+
+.data-item {
+    width: 30%;
+    /* background-color: lavender; */
+    flex: 1 1 0;
+    border-width: 2vw;
+    border-style: solid;
+    border-color: transparent;
+}
+
+.data-item-child{
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+}
+
+
+/* 按钮块容器 */
+.button-bar-wrapper {
+    margin-top: -20vw;
+    height: 25vw;
+    width: 100vw;
+    /* background-color: yellow; */
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-bar-area {
+    height: 25vw;
+    width: 90%;
+    /* background-color: teal; */
+    background-color: #ffffff;
+    border-radius: 10rpx;
+    display: flex;
+}
+
+.button-item {
+    height: 20vw;
+    width: 20%;
+    /* background-color: lavender; */
+    flex: 1 1 0;
+    border-width: 2vw;
+    border-style: solid;
+    border-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.normal-card-wrapper {
+    height: 25vw;
+    width: 100vw;
+    /* background-color: yellow; */
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+.button-item-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+}
